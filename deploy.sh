@@ -27,15 +27,16 @@ read -sp "Enter decryption password: " DECRYPT_PASSWORD
 echo
 
 # Encrypted and base64-encoded deployment key
-ENCRYPTED_KEY="U2FsdGVkX1+ghwbCo/riqZDqIpquwsw/EzdO7J4VNrZLHBadVR596m2tWrXJt4Gl
-GH4eBG/KoQC3mhg4jA/xioAfnrlvJ+PEXhQnCxgL5Mlb5t43Kg63SxDcR4BHBa5o
-G/vFC0JwSW0Y4O1VYLxnemaNgnAkMTfgclaRHGDx8g1Hn0NP0fF1ECwaUXxRUu92
-CbuYOw9/1N48tOkhgE2/B4dj3G5tYLdEfAmhIlcdYGE8Onn/6WkqSg/JZkBHrkl8
-ndXzaOpihJbfoahXfAUY01OPpkPlFlkMCRPhvBfSQsIVdXpqzT/vZLmFHhf2oMLQ
-PionOP8KgvergcB7GtKb/+6OVxKIPGMpHuwjIbR+BKTpJNGyFQU6UItT4Ca69icD
-fTb7cV/vg5KDW22N18RQ6TMcxyLfZQL/tIVwxjaczly5NaZaOZe05QznSPGh4cJH
-7tHk0TM1POFixDcIjCHM4JlmgRmHAqJGWHArs8mLPQdy9TeE70A9/rFl8uMNgZw4
-NpGU41OAchaMu2vOlLR5i3Drom5gQbp8Ugml7ALjSGHYdP0GJ9qvDsD1TB+hRk1S"
+ENCRYPTED_KEY="U2FsdGVkX1+grEN6i5DvfcH9s2sKtCv0AVC4DxefSJwoA5lp8a6YLFBWh+6wweFo
+6mM3I0rDomkC+qWoeHU1rXlc3X/kqxsAp2lS0E0wZWsfmaZ9RgCwmvb/UNO69TJ/
+6NUnGvdOFzZzqfriljaINcsHH4lm0ajF+0UL2ZIbGNf9CFypiGZn4T5H0jWAC+SA
+m3B1rIDlUB0fZIdAvdI4BIUi0Di1tT2layL5gY6R76Kv9lDBURiIp1BmSiD497+m
+RpTjaTyX7fUCdLz3p0cz9e4udd3JpGGko8F583iP/XTTg0wQQiy6+Qr6yMrBrzdr
+xMiazQ1Q2KnDSj7Nnk76+tuX7CnxmXMV7Gs+e39CYEuo2wm5eGqet/ECeu0scYFy
+J2I17QwAiOtu5jeyQ67iIBUc0syHuTxRRoQH6YAgrex+O+VV8+VK2w2mnTIUjSNv
+bjlRkr6ckNPpLN9RMcIIcBuzYPKoSLRFIc/pPB12UY1wq9nxIdJI4z8zxyL9egpq
+63Joz5zdmbBq/tR9z2TwhUssW0qGmnww8or1nrk09dYDSD1YwmCAJi++N11tJc92
+"
 
 # Decrypt and write the key to file
 echo "$ENCRYPTED_KEY" | openssl enc -aes-256-cbc -d -pbkdf2 -base64 -pass pass:"$DECRYPT_PASSWORD" >/root/my-deployment.key 2>/dev/null
