@@ -15,7 +15,7 @@ fi
 sudo hostnamectl set-hostname "$HOSTNAME"
 rm -rf /srv/salt/ /root/salt/
 sudo apt-get update
-sudo curl -L https://bootstrap.saltstack.com -o bootstrap_salt.sh
+sudo curl -L https://github.com/saltstack/salt-bootstrap/releases/latest/download/bootstrap-salt.sh -o bootstrap_salt.sh
 sudo sh bootstrap_salt.sh -P stable 3006
 sudo salt-call --local grains.set role "$ROLE"
 sudo salt-call --local grains.set environment production
