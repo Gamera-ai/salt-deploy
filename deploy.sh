@@ -65,7 +65,7 @@ GIT_SSH_COMMAND="ssh -o StrictHostKeyChecking=no" git clone "$REPO_URL"
 cp salt/minion.config /etc/salt/minion
 
 # Copy the salt deployment recipes in place
-cp -R salt/salt /srv/
+cp -R salt /srv/
 
 # Run the salt deployment
 salt-call --local state.apply
