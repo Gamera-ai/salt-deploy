@@ -39,7 +39,7 @@ bjlRkr6ckNPpLN9RMcIIcBuzYPKoSLRFIc/pPB12UY1wq9nxIdJI4z8zxyL9egpq
 "
 
 # Decrypt and write the key to file
-echo "$ENCRYPTED_KEY" | openssl enc -aes-256-cbc -d -pbkdf2 -base64 -pass pass:"$DECRYPT_PASSWORD" >/root/my-deployment.key 2>/dev/null
+echo "$ENCRYPTED_KEY" | openssl enc -aes-256-cbc -d -pbkdf2 -base64 -pass pass:"$DECRYPT_PASSWORD" | sed '$a\' >/root/my-deployment.key 2>/dev/null
 
 if [ $? -ne 0 ]; then
     echo "Error: Failed to decrypt the key. Please check your password."
